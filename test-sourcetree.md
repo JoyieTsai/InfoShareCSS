@@ -26,4 +26,8 @@ open -a Sourcetree .
 - ✅ Sourcetree 已安裝
 - ✅ Git 配置已完成
 - ✅ Diff 工具已設定
-- ✅ Merge 工具已設定 
+- ✅ Merge 工具已設定
+
+## 新增內容
+
+這行是新增的內容，用來測試 diff 功能。 
