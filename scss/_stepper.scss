@@ -1,0 +1,99 @@
+// Base class
+//
+.stepper {
+  // scss-docs-start step-css-vars
+  --#{$prefix}step-border-color: #{$step-border-color};
+  --#{$prefix}step-border-width: #{$step-border-width};
+  --#{$prefix}step-circle-size: #{$step-circle-size};
+  --#{$prefix}step-circle-color: #{$step-circle-color};
+  --#{$prefix}step-circle-bg: #{$step-circle-bg};
+  --#{$prefix}step-circle-active-color: #{$step-circle-active-color};
+  --#{$prefix}step-circle-active-bg: #{$step-circle-active-bg};
+  --#{$prefix}step-link-hover-bg: #{$step-link-hover-bg};
+  // scss-docs-end step-css-vars
+}
+
+.nav-steps {
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    font-weight: $font-weight-semibold;
+
+    &:hover {
+      background-color: var(--#{$prefix}step-link-hover-bg);
+    }
+
+    &.active {
+      opacity: 1;
+      .step-circle {
+        color: var(--#{$prefix}step-circle-active-color) !important;
+        background-color: var(--#{$prefix}step-circle-active-bg) !important;
+      }
+    }
+
+    &.disabled,
+    &:disabled {
+      .step-circle {
+        opacity: 50%;
+      }
+    }
+  }
+}
+
+.accordion-stepper {
+  .accordion-item {
+    border: none;
+    border-radius: 0 !important;
+  }
+  .accordion-button {
+    text-decoration: none;
+    &::after {
+      display: none;
+    }
+    &:disabled {
+      opacity: .4;
+    }
+    &:hover {
+      background-color: var(--#{$prefix}step-link-hover-bg);
+    }
+    &:focus {
+      outline: none;
+    }
+    &:not(.collapsed){
+      background-color: transparent;
+      .step-circle {
+        color: var(--#{$prefix}step-circle-active-color);
+        background-color: var(--#{$prefix}step-circle-active-bg);
+      }
+    }
+  }
+}
+
+.step-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--#{$prefix}step-circle-size);
+  height: var(--#{$prefix}step-circle-size);
+  border-radius: 50%;
+  color: var(--#{$prefix}step-circle-color);
+  background-color: var(--#{$prefix}step-circle-bg);
+  margin-right: 0.5rem;
+}
+
+.step-line {
+  border-color: var(--#{$prefix}step-border-color);
+  border-top: solid var(--#{$prefix}step-border-width);
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .stepper {
+      --#{$prefix}step-circle-active-color: #{$step-circle-active-color-dark};
+    }
+  }
+}

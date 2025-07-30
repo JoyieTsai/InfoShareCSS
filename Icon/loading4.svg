@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="CSILoading" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 90 90">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0059b3;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #0056ac;
+      }
+
+      .cls-4 {
+        fill: #0d63ba;
+      }
+
+      .cls-5 {
+        fill: #005bb8;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        fill: #136fcd;
+      }
+    </style>
+  </defs>
+  <g id="bg">
+    <path class="cls-4" d="M45,0l39,22.5v45l-39,22.5L6,67.5V22.5L45,0Z"/>
+  </g>
+  <g id="body">
+    <path fill="#136fcd" d="M45.1,45v43.2S7.6,66.6,7.6,66.6l37.5-21.6Z"/>
+    <path fill="#0059b3" d="M7.6,23.4l37.5,21.6V1.8S7.6,23.4,7.6,23.4Z"/>
+    <path fill="#005bb8" d="M82.6,23.4l-37.5,21.6,37.5,21.3V23.3h0,0Z"/>
+    <path fill="#0056ac" d="M45.1,1.8v43.2s37.5-21.6,37.5-21.6L45.1,1.8Z"/>
+  </g>
+  <g id="border">
+    <path class="cls-2" d="M7.5,23.4L45,1.7l37.5,21.6v43.3l-37.5,21.6L7.5,66.6V23.4Z"/>
+  </g>
+  <g id="i">
+    <path class="cls-6" d="M51.5,31.2c-1.5,1.3-1.8,3.2-.7,4.2,1.2,1,3.3.7,4.8-.6s1.8-3.2.7-4.2c-.5-.4-1.1-.6-1.8-.6-1,0-2.1.4-3,1.2Z"/>
+    <path class="cls-6" d="M44.8,40.3l-10.7,11.7s-3.7,4.6-1.4,6.8,5.8,1,7,.5c1.5-.6,5-2.8,6.2-3.8,1.5-1.2,7.7-6,7.7-6v-1.7s-6.4,5-8.5,6.7c-2.6,2-10.9,6.7-5.9.8l12.5-15h-7,.1Z"/>
+  </g>
+</svg>

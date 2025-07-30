@@ -1,0 +1,291 @@
+.svg-icon {
+  --#{$prefix}icon-star: #{escape-svg($icon-star)};
+  --#{$prefix}icon-star-active: #{escape-svg($icon-star-active)};
+  --#{$prefix}icon-ascending: #{escape-svg($icon-ascending)};
+  --#{$prefix}icon-descending: #{escape-svg($icon-descending)};
+  --#{$prefix}icon-sort: #{escape-svg($icon-sort)};
+  --#{$prefix}icon-setting: #{escape-svg($icon-setting)};
+  --#{$prefix}icon-notice: #{escape-svg($icon-notice)};
+  // 24px
+  --#{$prefix}icon-adv_search: #{escape-svg($icon-adv_search)};
+  --#{$prefix}icon-calendar: #{escape-svg($icon-calendar)};
+  --#{$prefix}icon-template: #{escape-svg($icon-template)};
+  --#{$prefix}icon-module: #{escape-svg($icon-module)};
+  --#{$prefix}icon-folder_close: #{escape-svg($icon-folder_close)};
+  --#{$prefix}icon-folder_open: #{escape-svg($icon-folder_open)};
+  --#{$prefix}icon-folder_nodata: #{escape-svg($icon-folder_nodata)};
+  --#{$prefix}icon-inbox_add: #{escape-svg($icon-inbox_add)};
+  --#{$prefix}icon-holiday: #{escape-svg($icon-holiday)};
+  --#{$prefix}icon-flag_cn: #{escape-svg($icon-flag_cn)};
+  --#{$prefix}icon-flag_us: #{escape-svg($icon-flag_us)};
+  --#{$prefix}icon-flag_tw: #{escape-svg($icon-flag_tw)};
+  --#{$prefix}icon-progress_checked: #{escape-svg($icon-progress_checked)};
+  // 30px
+  --#{$prefix}icon-admin: #{escape-svg($icon-admin)};
+  --#{$prefix}icon-account: #{escape-svg($icon-account)};
+  --#{$prefix}icon-logout: #{escape-svg($icon-logout)};
+  --#{$prefix}icon-menu_main: #{escape-svg($icon-menu_main)};
+  --#{$prefix}icon-menu_search: #{escape-svg($icon-menu_search)};
+  --#{$prefix}icon-menu_doc: #{escape-svg($icon-menu_doc)};
+  --#{$prefix}icon-menu_event: #{escape-svg($icon-menu_event)};
+  --#{$prefix}icon-menu_utility: #{escape-svg($icon-menu_utility)};
+  --#{$prefix}icon-menu_link_to: #{escape-svg($icon-menu_link_to)};
+  --#{$prefix}icon-menu_file: #{escape-svg($icon-menu_file)};
+  --#{$prefix}icon-menu_system: #{escape-svg($icon-menu_system)};
+  --#{$prefix}icon-list_normal: #{escape-svg($icon-list_normal)};
+  --#{$prefix}icon-list_selected: #{escape-svg($icon-list_selected)};
+  --#{$prefix}icon-tile_normal: #{escape-svg($icon-tile_normal)};
+  --#{$prefix}icon-tile_selected: #{escape-svg($icon-tile_selected)};
+  --#{$prefix}icon-inbox: #{escape-svg($icon-inbox)};
+  --#{$prefix}icon-event: #{escape-svg($icon-event)};
+  --#{$prefix}icon-mail: #{escape-svg($icon-mail)};
+  --#{$prefix}icon-news: #{escape-svg($icon-news)};
+  --#{$prefix}icon-work: #{escape-svg($icon-work)};
+  --#{$prefix}icon-tasks: #{escape-svg($icon-tasks)};
+  --#{$prefix}icon-sheet: #{escape-svg($icon-sheet)};
+  // 40px
+  --#{$prefix}icon-pdf: #{escape-svg($icon-pdf)};
+  --#{$prefix}icon-excel: #{escape-svg($icon-excel)};
+  --#{$prefix}icon-word: #{escape-svg($icon-word)};
+  --#{$prefix}icon-mp4: #{escape-svg($icon-mp4)};
+  --#{$prefix}icon-sorting: #{escape-svg($icon-sorting)};
+  // Other
+  --#{$prefix}icon-big_folder: #{escape-svg($icon-big_folder)};
+  --#{$prefix}icon-empty: #{escape-svg($icon-empty)};
+  --#{$prefix}icon-login_error: #{escape-svg($icon-login_error)};
+  // Loading
+  --#{$prefix}icon-loading1: #{escape-svg($icon-loading1)};
+  --#{$prefix}icon-loading2: #{escape-svg($icon-loading2)};
+  --#{$prefix}icon-loading3: #{escape-svg($icon-loading3)};
+  --#{$prefix}icon-loading4: #{escape-svg($icon-loading4)};
+  --#{$prefix}icon-loading5: #{escape-svg($icon-loading5)};
+  --#{$prefix}icon-loading6: #{escape-svg($icon-loading6)};
+
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+// 20px
+.icon-star {
+  background-image: var(--#{$prefix}icon-star);
+
+  &.active {
+    background-image: var(--#{$prefix}icon-star-active);
+  }
+}
+.icon-ascending {
+  background-image: var(--#{$prefix}icon-ascending);
+}
+.icon-descending {
+  background-image: var(--#{$prefix}icon-descending);
+}
+.icon-sort {
+  background-image: var(--#{$prefix}icon-sort);
+}
+.icon-setting {
+  background-image: var(--#{$prefix}icon-setting);
+}
+.icon-notice {
+  background-image: var(--#{$prefix}icon-notice);
+}
+
+// 24px
+.icon-adv_search {
+  background-image: var(--#{$prefix}icon-adv_search);
+}
+.icon-calendar {
+  background-image: var(--#{$prefix}icon-calendar);
+}
+.icon-template {
+  background-image: var(--#{$prefix}icon-template);
+}
+.icon-module {
+  background-image: var(--#{$prefix}icon-module);
+}
+
+.icon-folder_close {
+  background-image: var(--#{$prefix}icon-folder_close);
+}
+.icon-folder_open {
+  background-image: var(--#{$prefix}icon-folder_open);
+}
+.icon-folder_nodata {
+  background-image: var(--#{$prefix}icon-folder_nodata);
+}
+.icon-inbox_add {
+  background-image: var(--#{$prefix}icon-inbox_add);
+}
+.icon-holiday {
+  background-image: var(--#{$prefix}icon-holiday);
+}
+.icon-flag_cn {
+  background-image: var(--#{$prefix}icon-flag_cn);
+}
+.icon-flag_us {
+  background-image: var(--#{$prefix}icon-flag_us);
+}
+.icon-flag_tw {
+  background-image: var(--#{$prefix}icon-flag_tw);
+}
+.icon-progress_checked {
+  background-image: var(--#{$prefix}icon-progress_checked);
+}
+
+// 30px
+.icon-admin {
+  background-image: var(--#{$prefix}icon-admin);
+}
+.icon-account {
+  background-image: var(--#{$prefix}icon-account);
+}
+.icon-logout {
+  background-image: var(--#{$prefix}icon-logout);
+}
+.icon-menu_main {
+  background-image: var(--#{$prefix}icon-menu_main);
+}
+.icon-menu_search {
+  background-image: var(--#{$prefix}icon-menu_search);
+}
+.icon-menu_event {
+  background-image: var(--#{$prefix}icon-menu_event);
+}
+.icon-menu_doc {
+  background-image: var(--#{$prefix}icon-menu_doc);
+}
+.icon-menu_utility {
+  background-image: var(--#{$prefix}icon-menu_utility);
+}
+.icon-menu_link_to {
+  background-image: var(--#{$prefix}icon-menu_link_to);
+}
+.icon-menu_file {
+  background-image: var(--#{$prefix}icon-menu_file);
+}
+.icon-menu_system {
+  background-image: var(--#{$prefix}icon-menu_system);
+}
+.icon-menu_more {
+  background-image: var(--#{$prefix}icon-menu_more);
+}
+
+.icon-list_normal {
+  background-image: var(--#{$prefix}icon-list_normal);
+}
+.icon-list_selected {
+  background-image: var(--#{$prefix}icon-list_selected);
+}
+.icon-tile_normal {
+  background-image: var(--#{$prefix}icon-tile_normal);
+}
+.icon-tile_selected {
+  background-image: var(--#{$prefix}icon-tile_selected);
+}
+.icon-inbox {
+  background-image: var(--#{$prefix}icon-inbox);
+}
+.icon-event {
+  background-image: var(--#{$prefix}icon-event);
+}
+.icon-mail {
+  background-image: var(--#{$prefix}icon-mail);
+}
+.icon-news {
+  background-image: var(--#{$prefix}icon-news);
+}
+.icon-work {
+  background-image: var(--#{$prefix}icon-work);
+}
+.icon-tasks {
+  background-image: var(--#{$prefix}icon-tasks);
+}
+.icon-sheet {
+  background-image: var(--#{$prefix}icon-sheet);
+}
+
+// 40px
+.icon-pdf {
+  background-image: var(--#{$prefix}icon-pdf);
+}
+.icon-excel {
+  background-image: var(--#{$prefix}icon-excel);
+}
+.icon-word {
+  background-image: var(--#{$prefix}icon-word);
+}
+.icon-mp4 {
+  background-image: var(--#{$prefix}icon-mp4);
+}
+.icon-sorting {
+  background-image: var(--#{$prefix}icon-sorting);
+}
+
+// Other
+.icon-big_folder {
+  width: 140px;
+  height: 98px;
+  background-image: var(--#{$prefix}icon-big_folder);
+}
+.icon-empty {
+  width: 80px;
+  height: 80px;
+  background-image: var(--#{$prefix}icon-empty);
+}
+.icon-login_error {
+  width: 80px;
+  height: 80px;
+  background-image: var(--#{$prefix}icon-login_error);
+}
+.icon-loading {
+  width: 80px;
+  height: 80px;
+  animation: csiloading 1s linear infinite ; 
+}
+
+@keyframes csiloading {
+  0%   { background-image: var(--#{$prefix}icon-loading1) }
+  20%  { background-image: var(--#{$prefix}icon-loading2) }
+  40%  { background-image: var(--#{$prefix}icon-loading3) }
+  60%  { background-image: var(--#{$prefix}icon-loading4) }
+  80%  { background-image: var(--#{$prefix}icon-loading5) }
+  100% { background-image: var(--#{$prefix}icon-loading6) }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .icon-calendar {
+      --#{$prefix}icon-calendar: #{escape-svg($icon-calendar-dark)};
+    }
+  }
+}
+
+.icon-white {
+    .icon-ascending { --#{$prefix}icon-ascending: #{escape-svg($icon-ascending-dark)}; }
+    .icon-descending { --#{$prefix}icon-descending: #{escape-svg($icon-descending-dark)}; }
+    .icon-sort { --#{$prefix}icon-sort: #{escape-svg($icon-sort-dark)}; }
+    .icon-setting { --#{$prefix}icon-setting: #{escape-svg($icon-setting-dark)}; }
+    .icon-notice { --#{$prefix}icon-notice: #{escape-svg($icon-notice-dark)}; }
+    .icon-adv_search { --#{$prefix}icon-adv_search: #{escape-svg($icon-adv_search-dark)}; }
+    .icon-calendar { --#{$prefix}icon-calendar: #{escape-svg($icon-calendar-dark)}; }
+    .icon-template { --#{$prefix}icon-template: #{escape-svg($icon-template-dark)}; }
+    .icon-module { --#{$prefix}icon-module: #{escape-svg($icon-module-dark)}; }
+    .icon-folder_nodata { --#{$prefix}icon-folder_nodata: #{escape-svg($icon-folder_nodata-dark)}; }
+    .icon-admin { --#{$prefix}icon-admin: #{escape-svg($icon-admin-dark)}; }
+    .icon-account { --#{$prefix}icon-account: #{escape-svg($icon-account-dark)}; }
+    .icon-logout { --#{$prefix}icon-logout: #{escape-svg($icon-logout-dark)}; }
+
+    .icon-menu_main { --#{$prefix}icon-menu_main: #{escape-svg($icon-menu_main-dark)}; }
+    .icon-menu_search { --#{$prefix}icon-menu_search: #{escape-svg($icon-menu_search-dark)}; }
+    .icon-menu_doc { --#{$prefix}icon-menu_doc: #{escape-svg($icon-menu_doc-dark)}; }
+    .icon-menu_event { --#{$prefix}icon-menu_event: #{escape-svg($icon-menu_event-dark)}; }
+    .icon-menu_utility { --#{$prefix}icon-menu_utility: #{escape-svg($icon-menu_utility-dark)}; }
+    .icon-menu_link_to { --#{$prefix}icon-menu_link_to: #{escape-svg($icon-menu_link_to-dark)}; }
+    .icon-menu_file { --#{$prefix}icon-menu_file: #{escape-svg($icon-menu_file-dark)}; }
+    .icon-menu_system { --#{$prefix}icon-menu_system: #{escape-svg($icon-menu_system-dark)}; }
+
+    .icon-list_normal { --#{$prefix}icon-list_normal: #{escape-svg($icon-list_normal-dark)}; }
+    .icon-tile_normal { --#{$prefix}icon-tile_normal: #{escape-svg($icon-tile_normal-dark)}; }
+    .icon-empty { --#{$prefix}icon-empty: #{escape-svg($icon-empty-dark)}; }
+    .icon-login_error { --#{$prefix}icon-login_error: #{escape-svg($icon-login_error-dark)}; }
+  }

@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html lang="en" data-csi-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>InfoShare CSS for Bootstrap - Examples</title>
+  <!-- InfoShare icon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20,400,1,0" />
+  <!-- Google Fonts Open Sans -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" />
+  <!-- InfoShare CSS -->
+  <link rel="stylesheet" type="text/css" href="css/infoshareui.min.css" />
+  <!-- InfoShare IconFonts -->
+  <link rel="stylesheet" type="text/css" href="infoshare-v1.3/style.css" />
+
+  <!-- Java Script -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var calendarEl = document.getElementById("calendar");
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: "dayGridMonth",
+        events: [
+          {
+            title: "10:00-12:00",
+            start: "2025-03-03",
+            tag: "Case",
+            description: "Client Server Upload - NHSP AWS Site",
+          },
+          {
+            title: "ALL DAY",
+            start: "2025-03-12",
+            tag: "Personal",
+            description: "Client Server Upload - NHSP AWS Site",
+          },
+          {
+            title: "14:30-16:00",
+            start: "2025-03-20",
+            tag: "Staff",
+            description: "Weekly PM Meeting",
+          },
+        ],
+        eventContent: function (arg) {
+          let eventEl = document.createElement("div");
+          eventEl.className = "p-1 position-relative text-wrap";
+          eventEl.innerHTML =
+            "<div class='fw-semibold'>" +
+            arg.event.title +
+            "</div>" +
+            "<div class='fw-semibold'>" +
+            arg.event.extendedProps.description +
+            "</div>" +
+            "<div class='text-bg-warning px-1 lh-base text-xs position-absolute top-0 end-0 rounded-1'>" +
+            arg.event.extendedProps.tag +
+            "</div>";
+
+          let arrayOfDomNodes = [eventEl];
+          return { domNodes: arrayOfDomNodes };
+        },
+      });
+      calendar.render();
+      // var cla = document.getElementsByClassName("fc-header-toolbar");
+      // for (var i = 0; i < cla.length; i++) {
+      //   cla[i].style.display = "none";
+      // }
+    });
+  </script>
+</head>
+<body>
+  <!-- Menu -->
+  <div class="d-flex flex-column w-14 shadow position-fixed ps-2 h-100">
+    <h4 class="offcanvas-title my-3 text-primary fw-bold ps-2" id="offcanvasExampleLabel">
+      InfoShare CSS
+    </h4>
+    <ul class="list-group list-group-flush fs-5 overflow-auto mb-5">
+      <a class="list-group-item list-group-item-action" href="#Color">Color</a>
+      <a class="list-group-item list-group-item-action" href="#Typography">Typography</a>
+      <a class="list-group-item list-group-item-action" href="#Sizing">Sizing</a>
+      <a class="list-group-item list-group-item-action" href="#Link">Link</a>
+      <a class="list-group-item list-group-item-action" href="#Accordion">Accordion</a>
+      <a class="list-group-item list-group-item-action" href="#Badges">Badges</a>
+      <a class="list-group-item list-group-item-action" href="#Breadcrumb">Breadcrumb</a>
+      <a class="list-group-item list-group-item-action" href="#Buttons">Buttons</a>
+      <a class="list-group-item list-group-item-action" href="#ButtonGroup">ButtonGroup</a>
+      <a class="list-group-item list-group-item-action" href="#Cards">Cards</a>
+      <a class="list-group-item list-group-item-action" href="#Calendar">Calendar</a>
+      <a class="list-group-item list-group-item-action" href="#Carousel">Carousel</a>
+      <a class="list-group-item list-group-item-action" href="#Icons">Icons</a>
+      <a class="list-group-item list-group-item-action" href="#Table">Table</a>
+      <a class="list-group-item list-group-item-action" href="#List">List</a>
+      <a class="list-group-item list-group-item-action" href="#Dropdown">Dropdown</a>
+      <a class="list-group-item list-group-item-action" href="#Form">Form</a>
+      <a class="list-group-item list-group-item-action" href="#Popover">Popover</a>
+      <a class="list-group-item list-group-item-action" href="#Pagination">Pagination</a>
+      <a class="list-group-item list-group-item-action" href="#Progress">Progress</a>
+      <a class="list-group-item list-group-item-action" href="#Modal">Modal</a>
+      <a class="list-group-item list-group-item-action" href="#Navs">Navs</a>
+      <a class="list-group-item list-group-item-action" href="#Tabs">Tabs</a>
+      <a class="list-group-item list-group-item-action" href="#Stepper">Stepper</a>
+      <a class="list-group-item list-group-item-action" href="#Spinner">Spinner</a>
+    </ul>
+  </div>
+  <!-- Content -->
+  <div class="d-flex ps-15">
+    <div class="container">
+      <section id="Color" class="card my-5 p-5">
+        <h2 class="mb-5">Color</h2>
+        <h5 class="fw-light mt-4">Main Color</h5>
+        <div class="row">
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-primary text-white p-2">
+                .bg-primary
+                <div>#409EFF</div>
+              </div>
+              <div class="bg-primary bg-opacity-10 p-2">10%</div>
+              <div class="bg-white text-primary p-2">.text-primary</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-secondary text-white p-2">
+                .bg-secondary
+                <div>#005DE9</div>
+              </div>
+              <div class="bg-secondary bg-opacity-10 p-2">10%</div>
+              <div class="bg-white text-secondary p-2">.text-secondary</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-info text-white p-2">
+                .bg-info
+                <div>#00C1EB</div>
+              </div>
+              <div class="bg-info bg-opacity-10 p-2">10%</div>
+              <div class="bg-white text-info p-2">.text-info</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-danger text-white p-2">
+                .bg-danger
+                <div>#FF3030</div>
+              </div>
+              <div class="bg-danger bg-opacity-10 p-2">10%</div>
+              <div class="bg-white text-danger p-2">.text-danger</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-success text-white p-2">
+                .bg-success
+                <div>#18C77B</div>
+              </div>
+              <div class="bg-success bg-opacity-10 p-2">10%</div>
+              <div class="bg-white text-success-emphasis p-2">
+                .text-success-emphasis
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-warning text-white p-2">
+                Warning
+                <div>#FFBD14</div>
+              </div>
+              <div class="bg-warning bg-opacity-10 p-2">10%</div>
+              <div class="bg-white text-warning p-2">.text-warning</div>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="fw-light mt-4">Sub Color</h5>
+        <div class="row">
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-turquoise text-white p-2">
+                Turquoise
+                <div>#18C7B2</div>
+              </div>
+              <div class="bg-sub-turquoise bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-purple text-white p-2">
+                Purple
+                <div>#7569DE</div>
+              </div>
+              <div class="bg-sub-purple bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-orange text-white p-2">
+                Orange
+                <div>#FF8616</div>
+              </div>
+              <div class="bg-sub-orange bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-blue text-white p-2">
+                Blue
+                <div>#2871FF</div>
+              </div>
+              <div class="bg-sub-blue bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-ruby text-white p-2">
+                Ruby
+                <div>#F24060</div>
+              </div>
+              <div class="bg-sub-ruby bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-lime text-white p-2">
+                Lime
+                <div>#93D900</div>
+              </div>
+              <div class="bg-sub-lime bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-space text-white p-2">
+                Space
+                <div>#204E78</div>
+              </div>
+              <div class="bg-sub-space bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-ferrari text-white p-2">
+                Ferrari
+                <div>#F85420</div>
+              </div>
+              <div class="bg-sub-ferrari bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-steel text-white p-2">
+                Steel
+                <div>#439EB1</div>
+              </div>
+              <div class="bg-sub-steel bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-iron text-white p-2">
+                Iron
+                <div>#5C5C5C</div>
+              </div>
+              <div class="bg-sub-iron bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-russet text-white p-2">
+                Russet
+                <div>#9B5E4A</div>
+              </div>
+              <div class="bg-sub-russet bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-indigo text-white p-2">
+                Indigo
+                <div>#545B9A</div>
+              </div>
+              <div class="bg-sub-indigo bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-mint text-white p-2">
+                Mint
+                <div>#00D964</div>
+              </div>
+              <div class="bg-sub-mint bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-yellow text-white p-2">
+                Yellow
+                <div>#FFE926</div>
+              </div>
+              <div class="bg-sub-yellow bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-violet text-white p-2">
+                Violet
+                <div>#A038A3</div>
+              </div>
+              <div class="bg-sub-violet bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="rounded overflow-hidden">
+              <div class="bg-sub-jade text-white p-2">
+                Jade
+                <div>#009470</div>
+              </div>
+              <div class="bg-sub-jade bg-opacity-60 p-2">60%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Typography" class="card my-5 p-5">
+        <h2 class="mb-5">Typography</h2>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Heading</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;h1&gt;&lt;/h1&gt;</code></td>
+                <td>
+                  <h1>Heading 1</h1>
+                </td>
+              </tr>
+              <tr>
+                <td><code>&lt;h2&gt;&lt;/h2&gt;</code></td>
+                <td>
+                  <h2>Heading 2</h2>
+                </td>
+              </tr>
+              <tr>
+                <td><code>&lt;h3&gt;&lt;/h3&gt;</code></td>
+                <td>
+                  <h3>Heading 3</h3>
+                </td>
+              </tr>
+              <tr>
+                <td><code>&lt;h4&gt;&lt;/h4&gt;</code></td>
+                <td>
+                  <h4>Heading 4</h4>
+                </td>
+              </tr>
+              <tr>
+                <td><code>&lt;h5&gt;&lt;/h5&gt;</code></td>
+                <td>
+                  <h5>Heading 5</h5>
+                </td>
+              </tr>
+              <tr>
+                <td><code>&lt;h6&gt;&lt;/h6&gt;</code></td>
+                <td>
+                  <h6>Heading 6</h6>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-5xl</code></td>
+                <td>
+                  <div class="text-5xl">48px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-4xl</code></td>
+                <td>
+                  <div class="text-4xl">36px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-3xl</code></td>
+                <td>
+                  <div class="text-3xl">30px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-2xl</code></td>
+                <td>
+                  <div class="text-2xl">24px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-xl</code></td>
+                <td>
+                  <div class="text-xl">20px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-xl</code></td>
+                <td>
+                  <div class="text-lg">18px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-base</code></td>
+                <td>
+                  <div class="text-base">16px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-sm</code></td>
+                <td>
+                  <div class="text-sm">14px</div>
+                </td>
+              </tr>
+              <tr>
+                <td><code>text-xs</code></td>
+                <td>
+                  <div class="text-xs">12px</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="Sizing" class="card my-5 p-5">
+        <h2 class="mb-5">Sizing</h2>
+        <h4 class="mb-5">Width</h4>
+        <div class="d-grid gap-2">
+          <div class="d-flex">
+            <div class="w-1 bg-primary"></div>
+            <span class="ms-2">w-1</span>
+          </div>
+          <div class="w-2 text-bg-primary text-center">w-2</div>
+          <div class="w-3 text-bg-primary text-center">w-3</div>
+          <div class="w-4 text-bg-primary text-center">w-4</div>
+          <div class="w-5 text-bg-primary text-center">w-5</div>
+          <div class="w-6 text-bg-primary text-center">w-6</div>
+          <div class="w-7 text-bg-primary text-center">w-7</div>
+          <div class="w-8 text-bg-primary text-center">w-8</div>
+          <div class="w-9 text-bg-primary text-center">w-9</div>
+          <div class="w-10 text-bg-primary text-center">w-10</div>
+          <div class="w-12 text-bg-primary text-center">w-12</div>
+          <div class="w-14 text-bg-primary text-center">w-14</div>
+          <div class="w-16 text-bg-primary text-center">w-16</div>
+          <div class="w-18 text-bg-primary text-center">w-18</div>
+          <div class="w-20 text-bg-primary text-center">w-20</div>
+          <div class="d-flex">
+            <div class="w-1/2 text-bg-primary text-center">w-1/2</div>
+            <div class="w-2/4 text-bg-success text-center">w-2/4</div>
+          </div>
+          <div class="d-flex">
+            <div class="w-1/3 text-bg-primary text-center">w-1/3</div>
+            <div class="w-2/3 text-bg-success text-center">w-2/3</div>
+          </div>
+          <div class="d-flex">
+            <div class="w-1/4 text-bg-primary text-center">w-1/4</div>
+            <div class="w-3/4 text-bg-success text-center">w-3/4</div>
+          </div>
+          <div class="d-flex">
+            <div class="w-1/5 text-bg-primary text-center">w-1/5</div>
+            <div class="w-4/5 text-bg-success text-center">w-4/5</div>
+          </div>
+          <div class="d-flex">
+            <div class="w-2/5 text-bg-primary text-center">w-2/5</div>
+            <div class="w-3/5 text-bg-success text-center">w-3/5</div>
+          </div>
+          <div class="w-100 text-bg-primary text-center">w-100</div>
+        </div>
+
+        <h4 class="my-5">Height</h4>
+        <div class="d-flex gap-2 align-items-end" style="height: 500px">
+          <div class="w-2 bg-primary h-1 position-relative">
+            <div class="w-max position-absolute bottom-100">
+              <div class="rotate-r-90">h-1</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-2 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-2</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-3 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-3</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-4 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-4</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-5 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-5</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-6 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-6</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-7 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-7</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-8 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-8</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-9 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-9</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-10 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-10</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-12 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-12</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-14 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-14</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-16 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-16</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-18 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-18</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-20 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-20</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-1/5 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-1/5</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-1/4 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-1/4</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-1/3 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-1/3</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-1/2 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-1/2, h2/4</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-3/5 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-3/5</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-2/3 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-2/3</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-3/4 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-3/4</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-4/5 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-4/5</div>
+            </div>
+          </div>
+          <div class="w-2 text-bg-primary h-100 position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              <div class="rotate-r-90">h-100</div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="my-5">Sizing</h4>
+        <div class="d-flex flex-wrap gap-3 align-items-end">
+          <div class="d-flex align-items-center">
+            <div class="size-1 bg-primary"></div>
+            <div class="ms-2">size-1</div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="size-2 bg-primary"></div>
+            <div class="ms-2">size-2</div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="size-3 bg-primary"></div>
+            <div class="ms-2">size-3</div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="size-4 bg-primary"></div>
+            <div class="ms-2">size-4</div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="size-5 bg-primary"></div>
+            <div class="ms-2">size-5</div>
+          </div>
+          <div class="size-6 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-6
+            </div>
+          </div>
+          <div class="size-7 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-7
+            </div>
+          </div>
+          <div class="size-8 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-8
+            </div>
+          </div>
+          <div class="size-9 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-9
+            </div>
+          </div>
+          <div class="size-10 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-10
+            </div>
+          </div>
+          <div class="size-12 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-12
+            </div>
+          </div>
+          <div class="size-14 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-14
+            </div>
+          </div>
+          <div class="size-16 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-16
+            </div>
+          </div>
+          <div class="size-18 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-18
+            </div>
+          </div>
+          <div class="size-20 text-bg-primary position-relative">
+            <div class="w-max position-absolute top-50 start-50 translate-middle">
+              size-20
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Link" class="card my-5 p-5">
+        <h2 class="mb-5">Links</h2>
+
+        <div class="bd-example m-0 border-0">
+          <p>
+            <a href="#"
+              class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Primary
+              link</a>
+          </p>
+          <p>
+            <a href="#"
+              class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Secondary
+              link</a>
+          </p>
+          <p>
+            <a href="#"
+              class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Success
+              link</a>
+          </p>
+          <p>
+            <a href="#"
+              class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Danger
+              link</a>
+          </p>
+          <p>
+            <a href="#"
+              class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Warning
+              link</a>
+          </p>
+          <p>
+            <a href="#" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Info
+              link</a>
+          </p>
+          <p>
+            <a href="#"
+              class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Light link</a>
+          </p>
+          <p>
+            <a href="#" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Dark
+              link</a>
+          </p>
+          <p>
+            <a href="#"
+              class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Emphasis
+              link</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="Accordion" class="card my-5 p-5">
+        <h2 class="mb-5">Accordion</h2>
+
+        <div class="bd-example m-0 border-0">
+          <!-- General -->
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Accordion Item #1
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item's accordion body.</strong> It
+                  is shown by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the
+                  showing and hiding via CSS transitions. You can modify any
+                  of this with custom CSS or overriding our default variables.
+                  It's also worth noting that just about any HTML can go
+                  within the <code>.accordion-body</code>, though the
+                  transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong>
+                  It is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the
+                  showing and hiding via CSS transitions. You can modify any
+                  of this with custom CSS or overriding our default variables.
+                  It's also worth noting that just about any HTML can go
+                  within the <code>.accordion-body</code>, though the
+                  transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the
+                  showing and hiding via CSS transitions. You can modify any
+                  of this with custom CSS or overriding our default variables.
+                  It's also worth noting that just about any HTML can go
+                  within the <code>.accordion-body</code>, though the
+                  transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- Disabled -->
+          <div class="accordion" id="accordionExampleDisabled">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed disabled" type="button">
+                  Disabled
+                </button>
+              </h2>
+            </div>
+          </div>
+          <br />
+          <!-- Colored -->
+          <div class="accordion accordion-flush" id="accordionExample5">
+            <div class="accordion-item border-0">
+              <div class="accordion-header text-uppercase border-0">
+                <div class="accordion-button text-bg-primary icon-light" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                  Colored
+                </div>
+              </div>
+              <div id="collapse5" class="accordion-collapse collapse show" data-bs-parent="#accordionExample5">
+                <div class="accordion-body bg-ui-gray-2">
+                  <div class="fs-5 text-dark">Colored background.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- Small icon -->
+          <div class="accordion accordion-flush" id="accordionExample9">
+            <div class="accordion-item border-0">
+              <div class="accordion-header text-uppercase border-0">
+                <div class="accordion-button icon-small" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+                  Small arrow
+                </div>
+              </div>
+              <div id="collapse9" class="accordion-collapse collapse show" data-bs-parent="#accordionExample9">
+                <div class="accordion-body bg-ui-gray-2">
+                  <div class="fs-5 text-dark">Colored background.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- Icon Start -->
+          <div class="accordion" id="accordionExample2">
+            <div class="accordion-item border-0">
+              <div class="accordion-header text-uppercase border-0">
+                <div class="accordion-button icon-start icon-light text-bg-dark" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                  Dark Legend
+                </div>
+              </div>
+              <div id="collapse2" class="accordion-collapse collapse show" data-bs-parent="#accordionExample2">
+                <div class="accordion-body">
+                  <div class="fs-5">
+                    This is commonly used for InfoShare products.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- Has Buttons -->
+          <div class="accordion" id="accordionExample3">
+            <div class="accordion-item border-0">
+              <div class="accordion-header text-uppercase border-0">
+                <div class="accordion-button no-icon text-bg-dark">
+                  <div class="accordion-button icon-start icon-light text-bg-dark w-auto p-0" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true"
+                    aria-controls="collapse3"></div>
+                  <div class="accordion-title">
+                    Default Legend with Buttons
+                  </div>
+                  <div class="d-flex gap-3">
+                    <a class="icon-link link-light link-opacity-75-hover" href="#">
+                      <i class="bi info-icon-add"></i>
+                      <span class="fs-5">ADD</span>
+                    </a>
+                    <a class="icon-link link-light link-opacity-75-hover" href="#">
+                      <i class="bi info-icon-archive"></i>
+                      <span class="fs-5">Archive</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="collapse3" class="accordion-collapse collapse show" data-bs-parent="#accordionExample3">
+                <div class="accordion-body">
+                  <div class="fs-5">Include buttons in legend bar.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- Disabled -->
+          <div class="accordion" id="accordionExample4">
+            <div class="accordion-item border-0">
+              <div class="accordion-header text-uppercase border-0">
+                <div class="accordion-button icon-start icon-light text-bg-dark disabled" type="button">
+                  Default Legend Disabled
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- Sub Legend -->
+          <div class="accordion" id="accordionExample6">
+            <div class="accordion-item border-0">
+              <div class="accordion-header text-uppercase border-0">
+                <div class="accordion-button icon-start text-bg-ui-gray-3 py-1" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                  Sub Legend
+                </div>
+              </div>
+              <div id="collapse6" class="accordion-collapse collapse show" data-bs-parent="#accordionExample6">
+                <div class="accordion-body text-bg-light">
+                  <div class="fs-5">
+                    Usually as a secondary legend and inside in a default
+                    legend.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Badges" class="card my-5 p-5">
+        <h2 class="mb-5">Badges</h2>
+        <div class="d-flex gap-3">
+          <span class="badge rounded-pill text-bg-danger">12</span>
+          <span class="badge rounded-pill text-primary bg-primary bg-opacity-10">3</span>
+          <span class="badge rounded-pill text-sub-orange bg-sub-orange bg-opacity-10">3</span>
+          <span class="badge rounded-pill text-bg-light">13 days</span>
+          <span class="badge rounded-pill text-body-tertiary bg-light">13 days</span>
+          <span class="badge rounded-pill text-danger bg-danger bg-opacity-10">Yes</span>
+          <span class="badge rounded-pill text-primary bg-info bg-opacity-10">No</span>
+          <span class="badge rounded-pill text-bg-danger">Error</span>
+          <span class="badge rounded-pill text-bg-success">Success</span>
+        </div>
+        <br />
+        <hr />
+        <div class="row">
+          <div class="col">
+            <span class="fw-bold">My Active Cases</span>
+            <span class="badge rounded-pill text-bg-danger">6</span>
+          </div>
+          <div class="col">
+            <span class="fw-bold">My Active Cases</span>
+            <span class="badge rounded-pill text-bg-danger">99+</span>
+          </div>
+          <div class="col">
+            <span class="text-body-tertiary">My Active Cases</span>
+          </div>
+        </div>
+        <hr />
+        <div class="row gy-3">
+          <div class="col-4">
+            <div class="d-flex">
+              <div class="w-3">
+                <span class="badge rounded-pill text-bg-danger">6</span>
+              </div>
+              <span class="fw-bold">My Active Cases</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="d-flex">
+              <div class="w-3">
+                <span class="badge rounded-pill text-bg-danger">1</span>
+              </div>
+              <span class="fw-bold">My Active Cases</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="d-flex">
+              <div class="w-3 position-relative">
+                <div class="position-absolute top-50 start-25 p-1 translate-middle bg-ui-gray-1 rounded-circle"></div>
+              </div>
+              <span class="text-body-tertiary">My Active Cases</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="d-flex">
+              <div class="w-3">
+                <span class="badge rounded-pill text-bg-danger">99+</span>
+              </div>
+              <span class="fw-bold">My Active Cases</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="d-flex">
+              <div class="w-3 position-relative">
+                <div class="position-absolute top-50 start-25 p-1 translate-middle bg-ui-gray-1 rounded-circle"></div>
+              </div>
+              <span class="text-body-tertiary">My Active Cases</span>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="d-flex gap-5">
+          <button type="button" class="btn btn-primary position-relative">
+            Inbox
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              99+
+            </span>
+          </button>
+          <button type="button" class="btn btn-secondary position-relative">
+            Notification
+            <span
+              class="position-absolute top-0 start-100 translate-middle p-2 bg-warning border border-light rounded-circle">
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section id="Breadcrumb" class="card my-5 p-5">
+        <h2 class="mb-5">Breadcrumb</h2>
+        <div class="d-flex justify-content-between">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a class="icon-link link-body-emphasis" href="#">
+                  <i class="bi info-icon-home"></i> Home
+                </a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Library
+              </li>
+            </ol>
+          </nav>
+          <div>
+            <ul class="btn-group-divider">
+              <li class="btn-item">
+                <a class="link-body-emphasis link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                  href="">Reports</a>
+              </li>
+              <li class="btn-item">
+                <a class="link-body-emphasis link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                  href="">Phone Book</a>
+              </li>
+              <li class="btn-item">
+                <a class="link-body-emphasis link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                  href="">Template & Form</a>
+              </li>
+              <li class="btn-item">
+                <a class="link-body-emphasis link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                  href="">User Manual</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="Buttons" class="card my-5 p-5">
+        <h2 class="mb-5">Buttons</h2>
+        <div>
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-info">Info</button>
+          <button type="button" class="btn btn-light">Light</button>
+          <button type="button" class="btn btn-dark">Dark</button>
+          <button type="button" class="btn btn-link">Link</button>
+          <button type="button" class="btn btn-link link-success">
+            Link
+          </button>
+          <button type="button" class="btn btn-primary">
+            <i class="bi info-icon-add fw-bold"></i>Add
+          </button>
+          <button type="button" class="btn btn-lightblue text-primary">
+            <i class="bi info-icon-add fw-bold"></i>Add
+          </button>
+        </div>
+        <br />
+        <div>
+          <button type="button" class="btn btn-outline-primary">
+            Primary
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            Secondary
+          </button>
+          <button type="button" class="btn btn-outline-success">
+            Success
+          </button>
+          <button type="button" class="btn btn-outline-danger">Danger</button>
+          <button type="button" class="btn btn-outline-warning">
+            Warning
+          </button>
+          <button type="button" class="btn btn-outline-info">Info</button>
+          <button type="button" class="btn btn-outline-light">Light</button>
+          <button type="button" class="btn btn-outline-dark">Dark</button>
+        </div>
+        <br />
+        <div>
+          <button type="button" class="btn btn-primary btn-lg">Large</button>
+          <button type="button" class="btn btn-primary">Default</button>
+          <button type="button" class="btn btn-primary btn-sm">Small</button>
+        </div>
+        <hr />
+        <div class="d-flex gap-1">
+          <button type="button" class="btn btn-primary" data-bs-toggle="button">
+            Toggle button
+          </button>
+          <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">
+            Active toggle button
+          </button>
+          <button type="button" class="btn btn-primary" disabled data-bs-toggle="button">
+            Disabled toggle button
+          </button>
+        </div>
+        <hr />
+        <div>
+          <a class="btn icon-link" href="#">
+            <i class="bi info-icon-home"></i>
+            Home
+          </a>
+          <a class="icon-link link-body-emphasis" href="#">
+            <i class="bi info-icon-home"></i>
+            Home
+          </a>
+        </div>
+      </section>
+
+      <section id="ButtonGroup" class="card my-5 p-5">
+        <h2 class="mb-5">Button Group</h2>
+        <div class="d-flex flex-wrap gap-3">
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary active" aria-current="page">Active</a>
+            <a href="#" class="btn btn-primary">Link</a>
+            <a href="#" class="btn btn-primary disabled">Disabled</a>
+          </div>
+          <div class="btn-group">
+            <a href="#" class="btn btn-outline-primary active" aria-current="page">Active</a>
+            <a href="#" class="btn btn-outline-primary">Link</a>
+            <a href="#" class="btn btn-outline-primary disabled">Disabled</a>
+          </div>
+          <div class="btn-group">
+            <a href="#" class="btn btn-dark btn-arrow" aria-current="page">Active</a>
+            <a href="#" class="btn btn-ui-gray-2">Link</a>
+            <a href="#" class="btn btn-ui-gray-2 disabled">Disabled</a>
+          </div>
+          <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+          </div>
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+            <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+          </div>
+
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradioA" autocomplete="off" checked />
+            <label class="btn btn-ui-gray-2 btn-arrow" for="btnradioA">Radio A</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradioB" autocomplete="off" />
+            <label class="btn btn-ui-gray-2 btn-arrow" for="btnradioB">Radio B</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradioC" autocomplete="off" />
+            <label class="btn btn-ui-gray-2 btn-arrow" for="btnradioC">Radio C</label>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+          </div>
+
+          <div class="form-switch day-mode">
+            <input id="themeSwitch" type="checkbox" role="switch" class="form-check-input border-primary bg-primary" />
+            <label class="form-check-label" for="themeSwitch"></label>
+          </div>
+          <div class="bg-dark p-2 mt-2">
+            <div class="form-switch day-mode">
+              <input id="themeSwitch" type="checkbox" role="switch" class="form-check-input" />
+              <label class="form-check-label" for="themeSwitch"></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Cards" class="card my-5 p-5">
+        <h2 class="mb-5">Cards</h2>
+        <div class="card inbox-card">
+          <div class="card-header">Featured</div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Calendar" class="card my-5 p-5">
+        <h2 class="mb-5">Calendar</h2>
+        <div id="calendar" class="calendar"></div>
+      </section>
+
+      <section id="Carousel" class="card my-5 p-5">
+        <h2 class="mb-5">Carousel</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" Slides - Company
+              Introduction class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/img01.jpg" class="d-block w-100" alt="" />
+            </div>
+            <div class="carousel-item">
+              <img src="img/img02.jpg" class="d-block w-100" alt="" />
+            </div>
+            <div class="carousel-item">
+              <img src="img/img03.jpg" class="d-block w-100" alt="" />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="Icons" class="card my-5 p-5">
+        <h2 class="mb-5">Icons</h2>
+        <h4>Basic Icons</h4>
+        <a href="https://fonts.google.com/icons">Google Material icons</a>
+        <hr />
+        <h4>CSI Icon Font</h4>
+        <ul id="icons-list" class="row row-cols-8 list-unstyled list">
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-record"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">record</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-add"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">add</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-alert"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">alert</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-archive"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                archive
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-attachment"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                attachment
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-close"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">close</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-delete"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">delete</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-download"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                download
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-edit"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">edit</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-email"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">email</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-help"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">help</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-infinity"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                infinity
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">menu</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-minus"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">minus</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-modify"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">modify</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-more"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">more</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-open_in_new"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                open_in_new
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-print"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">print</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-report"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">report</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-require"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                require
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-update"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">update</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-upload"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">upload</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-view"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">view</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-search"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">search</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-pin"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">pin</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-option"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">option</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-history"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                history
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-arrow_circle_right"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                arrow_circle_right
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-arrow_circle_left"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                arrow_circle_left
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-mugshot"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                mugshot
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-home"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">home</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-star"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">star</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-arrow_down"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                arrow_down
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-arrow_left"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                arrow_left
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-arrow_right"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                arrow_right
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-arrow_up"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                arrow_up
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-backward"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                backward
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-checked"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                checked
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-close_all"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                close_all
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-day"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">day</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-forward"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                forward
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-map"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">map</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-next"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">next</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-night"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">night</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-open_all"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                open_all
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-page_first"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                page_first
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-page_last"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                page_last
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-prev"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">prev</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-solid_arrow_down"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                solid_arrow_down
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-solid_arrow_left"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                solid_arrow_left
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-solid_arrow_right"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                solid_arrow_right
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-solid_arrow_up"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                solid_arrow_up
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-step_checked"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                step_checked
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-star"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">star</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-star_edit"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                star_edit
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-inbox"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">inbox</div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-summary"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                summary
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_main"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_main
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_search"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_search
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_doc"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_doc
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_event"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_event
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_utility"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_utility
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_file"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_file
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_link_to"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_link_to
+              </div>
+            </div>
+          </li>
+          <li class="p-1">
+            <div class="d-block text-body-emphasis">
+              <div class="px-3 py-4 mb-2 bg-light text-center rounded fs-2">
+                <i class="info-icon-menu_system"></i>
+              </div>
+              <div class="text-muted fs-5 lh-sm text-center mb-3">
+                menu_system
+              </div>
+            </div>
+          </li>
+        </ul>
+        <hr />
+        <h4>CSI SVG Icons</h4>
+        <h6 class="my-3">Size 20px</h6>
+        <div class="grid bg-body-bg p-5">
+          <span class="svg-icon icon-ascending icon-sizes-2"></span>
+          <span class="svg-icon icon-descending icon-sizes-2"></span>
+          <span class="svg-icon icon-sort icon-sizes-2"></span>
+          <span class="svg-icon icon-setting icon-sizes-2"></span>
+          <span class="svg-icon icon-notice icon-sizes-2"></span>
+        </div>
+
+        <h6 class="my-3">Size 24px</h6>
+        <div class="grid bg-body-bg p-5">
+          <span class="svg-icon icon-adv_search icon-sizes-3"></span>
+          <span class="svg-icon icon-calendar icon-sizes-3"></span>
+          <span class="svg-icon icon-folder_close icon-sizes-3"></span>
+          <span class="svg-icon icon-folder_open icon-sizes-3"></span>
+          <span class="svg-icon icon-folder_nodata icon-sizes-3"></span>
+          <span class="svg-icon icon-inbox_add icon-sizes-3"></span>
+          <span class="svg-icon icon-holiday icon-sizes-3"></span>
+          <span class="svg-icon icon-flag_us icon-sizes-3"></span>
+          <span class="svg-icon icon-flag_cn icon-sizes-3"></span>
+          <span class="svg-icon icon-flag_tw icon-sizes-3"></span>
+          <span class="svg-icon icon-progress_checked icon-sizes-3"></span>
+        </div>
+
+        <h6 class="my-3">Size 30px</h6>
+        <div class="grid bg-body-bg p-5">
+          <span class="svg-icon icon-admin icon-sizes-4"></span>
+          <span class="svg-icon icon-account icon-sizes-4"></span>
+          <span class="svg-icon icon-logout icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_main icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_search icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_doc icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_event icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_utility icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_link_to icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_file icon-sizes-4"></span>
+          <span class="svg-icon icon-menu_system icon-sizes-4"></span>
+          <span class="svg-icon icon-template icon-sizes-4"></span>
+          <span class="svg-icon icon-list_normal icon-sizes-4"></span>
+          <span class="svg-icon icon-list_selected icon-sizes-4"></span>
+          <span class="svg-icon icon-tile_normal icon-sizes-4"></span>
+          <span class="svg-icon icon-tile_selected icon-sizes-4"></span>
+          <span class="svg-icon icon-inbox icon-sizes-4"></span>
+          <span class="svg-icon icon-event icon-sizes-4"></span>
+          <span class="svg-icon icon-mail icon-sizes-4"></span>
+          <span class="svg-icon icon-news icon-sizes-4"></span>
+          <span class="svg-icon icon-work icon-sizes-4"></span>
+          <span class="svg-icon icon-tasks icon-sizes-4"></span>
+          <span class="svg-icon icon-sheet icon-sizes-4"></span>
+        </div>
+
+        <h6 class="my-3">Size 40px</h6>
+        <div class="grid bg-body-bg p-5">
+          <span class="svg-icon icon-pdf icon-sizes-5"></span>
+          <span class="svg-icon icon-excel icon-sizes-5"></span>
+          <span class="svg-icon icon-word icon-sizes-5"></span>
+          <span class="svg-icon icon-mp4 icon-sizes-5"></span>
+          <span class="svg-icon icon-sorting icon-sizes-5"></span>
+        </div>
+
+        <h6 class="my-3">Others</h6>
+        <div class="grid bg-body-bg p-5">
+          <span class="svg-icon icon-big_folder"></span>
+          <span class="svg-icon icon-empty"></span>
+          <span class="svg-icon icon-login_error"></span>
+        </div>
+      </section>
+
+      <section id="Table" class="card my-5 p-5">
+        <h2 class="mb-5">Table</h2>
+
+        <!-- <div class="list-group fs-5">
+             <a
+               href="#"
+               class="list-group-item list-group-item-action d-flex align-items-center"
+             >
+               Link 1
+             </a>
+             <a
+               href="#"
+               class="list-group-item list-group-item-action d-flex align-items-center"
+             >
+               Link 2
+             </a>
+           </div> -->
+
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div class="text-secondary">Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div class="text-success">Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div class="text-danger">Example label</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div><a href="#">Example label</a></div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <table class="table table-bordered table-dark">
+          <tbody>
+            <tr>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div class="text-secondary">Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div class="text-success">Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div class="text-danger">Example label</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div><a href="#">Example label</a></div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+              <td>
+                <label class="form-label">Case Name</label>
+                <div>Example label</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="List" class="card my-5 p-5">
+        <h2 class="mb-5">List</h2>
+        <div>
+          <div class="list-group fs-5">
+            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+              Link 1
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+              Link 2
+            </a>
+          </div>
+        </div>
+        <br>
+        <ul class="list-group">
+          <li class="list-group-item">A simple default list group item</li>
+          <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+          <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+          <li class="list-group-item list-group-item-success">A simple success list group item</li>
+          <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+          <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+          <li class="list-group-item list-group-item-info">A simple info list group item</li>
+          <li class="list-group-item list-group-item-light">A simple light list group item</li>
+          <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+        </ul>
+      </section>
+
+      <section id="Dropdown" class="card my-5 p-5">
+        <h2 class="mb-5">Dropdown</h2>
+        <div class="d-flex">
+          <div class="dropdown me-3">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group me-3">
+            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group me-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group me-3">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group me-3">
+            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="Form" class="card my-5 p-5">
+        <h2 class="mb-5">Form</h2>
+        <div class="row">
+          <div class="d-flex flex-column gap-3">
+            <input class="form-control form-control-lg" type="text" placeholder="Large input example: .form-control-lg"
+              aria-label=".form-control-lg example" disabled />
+            <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+            <input class="form-control form-control-sm" type="text" placeholder="Small input example: .form-control-sm"
+              aria-label=".form-control-sm example" />
+            <!-- Select -->
+            <select class="g-col-md-3 form-select form-select-lg" aria-label="Default select example">
+              <option selected>Large select example: .form-select-lg</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <select class="g-col-md-3 form-select" aria-label="Default select example">
+              <option selected>Default select example</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <select class="g-col-md-3 form-select form-select-sm" aria-label="Default select example">
+              <option selected>Small select example: .form-select-sm</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <!-- Buttons with dropdowns -->
+            <div class="input-group">
+              <input type="text" class="form-control form-control-lg" placeholder="Input Group" />
+              <button class="btn input-group-btn rounded-end" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="material-symbols-sharp"> arrow_drop_down </span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Input Group" />
+              <button class="btn input-group-btn rounded-end" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="material-symbols-sharp"> arrow_drop_down </span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <div class="input-group">
+              <input type="text" class="form-control form-control-sm" placeholder="Input Group" />
+              <button class="btn input-group-btn rounded-end" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="material-symbols-sharp"> arrow_drop_down </span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              <label class="form-check-label" for="flexCheckDefault">
+                Default checkbox
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+              <label class="form-check-label" for="flexCheckChecked">
+                Checked checkbox
+              </label>
+            </div>
+            <!-- Radio -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Default radio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Default checked radio
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Popover" class="card my-5 p-5">
+        <h2 class="mb-5">Popover</h2>
+        <div class="d-flex gap-3">
+          <a role="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+            data-bs-content='<div> <div class="fw-semibold">1/19/2023 9:00 - 12:00</div> <div>Miranda</div> <hr /> <div class="d-flex w-100 align-items-center justify-content-between gap-5" > <small class="text-body-secondary">INVESTIGATION #</small> <a href="">P210800034</a> </div> <div class="d-flex w-100 align-items-center justify-content-between gap-3" > <small class="text-body-secondary">DEFENDANT</small> <span>CONTACT, 26343</span> </div> <div class="d-flex w-100 align-items-center justify-content-between gap-3" > <small class="text-body-secondary">LOCATION</small> <span>Court Room-1</span> </div> </div>'>Popover
+            1</a>
+          <a role="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="top" data-bs-html="true"
+            data-bs-custom-class="border-0 shadow"
+            data-bs-content='<div> <div class="fw-semibold">1/19/2023 9:00 - 12:00</div> <div>Miranda</div> <hr /> <div class="d-flex w-100 align-items-center justify-content-between gap-5" > <small class="text-body-secondary">INVESTIGATION #</small> <a href="">P210800034</a> </div> <div class="d-flex w-100 align-items-center justify-content-between gap-3" > <small class="text-body-secondary">DEFENDANT</small> <span>CONTACT, 26343</span> </div> <div class="d-flex w-100 align-items-center justify-content-between gap-3" > <small class="text-body-secondary">LOCATION</small> <span>Court Room-1</span> </div> </div>'>Popover
+            2</a>
+        </div>
+      </section>
+
+      <section id="Pagination" class="card my-5 p-5">
+        <h2 class="mb-5">Pagination</h2>
+        <div class="mx-auto">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-sm pagination-adv gap-2">
+              <li class="page-item">
+                <a class="page-link disabled" href="#" aria-label="First">
+                  <i class="info-icon-page_first"></i>
+                </a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <i class="info-icon-solid_arrow_left"></i>
+                </a>
+              </li>
+              <li class="page-item fs-5">
+                23 Records <span class="opacity-50">(1-23 Displayed)</span>
+              </li>
+              <li class="page-item fs-5 d-flex align-items-center">
+                <div class="text-nowrap me-2">Page size:</div>
+                <select class="form-select form-select-sm">
+                  <option selected>30</option>
+                  <option value="1">50</option>
+                  <option value="2">100</option>
+                </select>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <i class="info-icon-solid_arrow_right"></i>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Last">
+                  <i class="info-icon-page_last"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <br />
+        <div class="bg-dark pt-3">
+          <nav aria-label="Page navigation example" class="mx-auto w-fit">
+            <ul class="pagination pagination-sm pagination-adv gap-2" data-csi-theme="dark">
+              <li class="page-item">
+                <a class="page-link disabled" href="#" aria-label="First">
+                  <i class="info-icon-page_first"></i>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link disabled" href="#" aria-label="Previous">
+                  <i class="info-icon-solid_arrow_left"></i>
+                </a>
+              </li>
+              <li class="page-item fs-5">
+                23 Records <span class="opacity-50">(1-23 Displayed)</span>
+              </li>
+              <li class="page-item fs-5 d-flex align-items-center">
+                <div class="text-nowrap me-2">Page size:</div>
+                <select class="form-select form-select-sm" data-csi-theme="dark">
+                  <option selected>30</option>
+                  <option value="1">50</option>
+                  <option value="2">100</option>
+                </select>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <i class="info-icon-solid_arrow_right"></i>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Last">
+                  <i class="info-icon-page_last"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section id="Progress" class="card my-5 p-5">
+        <h2 class="mb-5">Progress</h2>
+        <div class="progress" style="height: 8px" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+          aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success" style="width: 75%"></div>
+        </div>
+        <br />
+        <div class="progress overflow-visible" style="height: 8px" role="progressbar" aria-label="Example with label"
+          aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success" style="width: 100%">
+            <span class="svg-icon icon-progress_checked icon-sizes-3 position-absolute" style="right: -1px"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="Modal" class="card my-5 p-5">
+        <h2 class="mb-5">Modal</h2>
+        <div class="modal position-static d-block" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-0 border-top-highlight">
+              <div class="modal-header">
+                <h6 class="modal-title mx-auto ps-4">Modal title</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer justify-content-start">
+                Tips
+                <button type="button" class="btn btn-primary rounded-5 p-0.5" data-bs-toggle="tooltip"
+                  data-bs-placement="right" data-bs-html="true"
+                  data-bs-title="<ul class='mb-0 me-2'><li>Click <b>Underline field</b> to view detail record.</li><li>Click <b>Save</b> button to save added record.</li></ul>">
+                  <i class="info-icon-help fw-bold"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Navs" class="card my-5 p-5">
+        <h2 class="mb-5">Navbar</h2>
+        <nav class="navbar navbar-expand-lg text-bg-dark py-1" data-csi-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/img/Genie.svg" alt="Logo" height="70" class="d-inline-block align-text-top me-1" />
+            </a>
+            <ul class="navbar-nav gap-2 ms-auto">
+              <li class="nav-item text-center dropdown nocaret">
+                <a class="nav-link dropdown-toggle mt-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="svg-icon icon-account icon-sizes-2"></span>
+                  <div class="fs-5">
+                    Account <span class="info-icon-solid_arrow_down"></span>
+                  </div>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Password</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-center mt-1" aria-current="page" href="#">
+                  <span class="svg-icon icon-logout icon-sizes-2"></span>
+                  <div class="fs-5">Logout</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <br />
+        <nav class="navbar navbar-expand-lg text-bg-dark py-1" data-csi-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/img/rms.png" alt="Logo" height="70" class="d-inline-block align-text-top" />
+            </a>
+            <div>
+              <span class="fs-5 text-info text-uppercase">The office of the</span>
+              <h6 class="mb-0 text-uppercase">CSI TECHNOLOGY GROUP</h6>
+            </div>
+            <div class="d-flex ms-auto gap-3">
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Search" />
+                <button class="btn btn-primary" type="button">
+                  <i class="info-icon-search fs-2"></i>
+                </button>
+              </div>
+              <button class="btn btn-primary btn-sm" type="button">
+                <span class="svg-icon icon-adv_search icon-sizes-3"></span>
+              </button>
+            </div>
+            <div class="form-switch day-mode mx-3">
+              <input id="themeSwitch" type="checkbox" role="switch" class="form-check-input" />
+              <label class="form-check-label" for="themeSwitch"></label>
+            </div>
+            <ul class="navbar-nav gap-2">
+              <li class="nav-item text-center dropdown nocaret">
+                <a class="nav-link dropdown-toggle mt-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="svg-icon icon-account icon-sizes-2"></span>
+                  <div class="fs-5">
+                    Account <span class="info-icon-solid_arrow_down"></span>
+                  </div>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Password</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-center mt-1" aria-current="page" href="#">
+                  <span class="svg-icon icon-logout icon-sizes-2"></span>
+                  <div class="fs-5">Logout</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+
+      <section id="Tabs" class="card my-5 p-5">
+        <h2 class="mb-5">Tabs</h2>
+        <ul class="nav nav-tabs nav-startline">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <br />
+        <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-tabs gap-2 card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="true" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="Stepper" class="card my-5 p-5">
+        <h2 class="mb-5">Stepper</h2>
+        <ul class="stepper nav nav-steps" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" type="button" role="tab" aria-selected="true">
+              <span class="step-circle">1</span> Step1
+            </button>
+          </li>
+          <li class="nav-item w-100" role="presentation">
+            <hr class="step-line" />
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" type="button" role="tab" aria-selected="false">
+              <span class="step-circle">2</span> Step2
+            </button>
+          </li>
+          <li class="nav-item w-100" role="presentation">
+            <hr class="step-line" />
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" type="button" role="tab" aria-selected="false" disabled>
+              <span class="step-circle">3</span> Step3
+            </button>
+          </li>
+          <li class="nav-item w-100" role="presentation">
+            <hr class="step-line" />
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" type="button" role="tab" aria-selected="false" disabled>
+              <span class="step-circle">4</span> Step4
+            </button>
+          </li>
+        </ul>
+        <br />
+        <div class="d-flex">
+          <ul class="stepper nav nav-steps rounded-pill bg-dark mx-auto" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-white" id="tab1" data-bs-toggle="tab" data-bs-target="#case-tab-pane"
+                type="button" role="tab" aria-controls="case-tab-pane" aria-selected="true">
+                <span class="step-circle bg-white text-dark"><i class="info-icon-step_checked"></i></span>
+                CASE
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-white active" id="tab2" data-bs-toggle="tab"
+                data-bs-target="#juvenile-tab-pane" type="button" role="tab" aria-controls="juvenile-tab-pane"
+                aria-selected="false">
+                <span class="step-circle bg-white text-dark"><i class="info-icon-next"></i></span>
+                JUVENILE
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-white" id="tab3" data-bs-toggle="tab" data-bs-target="#related-tab-pane"
+                type="button" role="tab" aria-controls="related-tab-pane" aria-selected="false">
+                <span class="step-circle bg-white text-dark"><i class="info-icon-next"></i></span>
+                RELATED
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-white" id="tab4" data-bs-toggle="tab" data-bs-target="#charge-tab-pane"
+                type="button" role="tab" aria-controls="charge-tab-pane" aria-selected="false" disabled>
+                <span class="step-circle bg-white text-dark"><i class="info-icon-next"></i></span>
+                CHARGE
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-white" id="tab5" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false" disabled>
+                <span class="step-circle bg-white text-dark"><i class="info-icon-next"></i></span>
+                CONTACTS / WITNESS
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content p-3" id="exStepper">
+          <div class="tab-pane fade text-center show active" id="case-tab-pane" role="tabpanel"
+            aria-labelledby="case-tab" tabindex="0">Tab 1 content</div>
+          <div class="tab-pane fade text-center" id="juvenile-tab-pane" role="tabpanel" aria-labelledby="juvenile-tab"
+            tabindex="0">Tab 2 content</div>
+          <div class="tab-pane fade text-center" id="related-tab-pane" role="tabpanel" aria-labelledby="related-tab"
+            tabindex="0">Tab 3 content</div>
+        </div>
+      </section>
+
+      <section id="Spinner" class="card my-5 p-5">
+        <h2 class="mb-5">Spinners</h2>
+        <div class="mx-auto">
+          <!-- Svg -->
+          <div class="d-flex justify-content-center position-related">
+            <!-- <img src="../img/loading.gif" alt="" class="icon-sizes-6" /> -->
+            <span class="svg-icon icon-loading position-related"></span>
+          </div>
+          <br />
+          <!-- Toast -->
+          <div class="toast align-items-center text-bg-primary border-0 rounded-5 show" style="width: 300px"
+            role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body w-100">
+                <div class="loading_line_wrapper my-2 px-2">
+                  <div class="loading_line">
+                    <div class="loading_line_inner loading_line_inner--1"></div>
+                    <div class="loading_line_inner loading_line_inner--2"></div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn-close btn-close-white me-3 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+        <!-- Popup -->
+        <div class="modal position-static d-block" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-0 border-top-highlight">
+              <div class="modal-header">
+                <h6 class="modal-title mx-auto ps-4 text-primary">
+                  <div class="font-grow text-primary" role="status">
+                    Loading
+                  </div>
+                </h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- End your project here-->
+  <script>
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+    const popoverList = [...popoverTriggerList].map(
+      (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+    );
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+  </script>
+</body>
+</html>

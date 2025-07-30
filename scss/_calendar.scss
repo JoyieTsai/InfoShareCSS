@@ -1,0 +1,116 @@
+//
+// Base styles
+//
+
+.calendar {
+    // scss-docs-start calendar-css-vars
+    --#{$prefix}calendar-border-width: #{$calendar-border-width};
+    --#{$prefix}calendar-border-color: #{$calendar-border-color};
+    --#{$prefix}calendar-cap-padding-y: #{$calendar-cap-padding-y};
+    --#{$prefix}calendar-cap-padding-x: #{$calendar-cap-padding-x};
+    --#{$prefix}calendar-cap-bg: #{$calendar-cap-bg};
+    --#{$prefix}calendar-cap-color: #{$calendar-cap-color};
+    --#{$prefix}calendar-bg: #{$calendar-bg};
+    --#{$prefix}calendar-color: #{$calendar-color};
+    --#{$prefix}calendar-font: #{$calendar-font};
+    --#{$prefix}calendar-day-sun-bg: #{$calendar-day-sun-bg};
+    --#{$prefix}calendar-today-bg: #{$calendar-today-bg};
+    --#{$prefix}calendar-event-bg: #{$calendar-event-bg};
+    --#{$prefix}calendar-event-radius: #{$calendar-event-radius};
+    // scss-docs-end calendar-css-vars
+
+    font-size: var(--#{$prefix}calendar-font);
+
+    .fc-scrollgrid, th, td {
+        border-color: var(--#{$prefix}calendar-border-color);
+    }
+    .fc-day {
+        background-color: var(--#{$prefix}calendar-bg);
+    }
+    .fc-day.fc-day-sat, .fc-day.fc-day-sun {
+        background-color: var(--#{$prefix}calendar-day-sun-bg);
+    }
+    .fc-col-header-cell, .fc-col-header-cell.fc-day.fc-day-sat, .fc-col-header-cell.fc-day.fc-day-sun {
+        font-weight: 600;
+        background-color: var(--#{$prefix}calendar-cap-bg);
+    }
+    .fc-col-header-cell *, .fc-daygrid-day-number {
+        color: var(--#{$prefix}calendar-color);
+        text-decoration: none;
+    }
+    .fc-day-today {
+        background-color: var(--#{$prefix}calendar-bg) !important;
+        .fc-daygrid-day-number {
+            border-radius: 50%;
+            position: relative;
+            color: $white;
+            width: 1.5rem;
+            text-align: center;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 3px;
+                right: 0;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                background-color: var(--#{$prefix}calendar-today-bg);
+                z-index: -1;
+            }
+        }
+        .fc-col-header-cell-cushion {
+            color: $white;
+            background-color: var(--#{$prefix}calendar-today-bg);
+            display: block;
+        }
+    }
+    .fc-h-event, .fc-v-event {
+        background-color: var(--#{$prefix}calendar-event-bg);
+        border-radius: var(--#{$prefix}calendar-event-radius);
+        border-color: transparent;
+        .fc-event-main {
+            color: var(--#{$prefix}calendar-color) !important;
+        }
+    }
+    .fc-button-primary {
+        background-color: $primary;
+        border-color: $primary;
+
+        &:disabled {
+            background-color: $primary;
+            border-color: $primary;
+            opacity: .5;
+        }
+    }
+    .fc-daygrid-event-harness {
+        text-decoration: none;
+    }
+    .fc-event-main {
+        line-height: 1.25;
+    }
+    .fc-daygrid-day-top {
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: inherit;
+    }
+  }
+
+  .calendar-header {
+    padding: var(--#{$prefix}calendar-cap-padding-y) var(--#{$prefix}calendar-cap-padding-x);
+    margin-bottom: 1rem; 
+    color: var(--#{$prefix}calendar-cap-color);
+    background-color: var(--#{$prefix}calendar-cap-bg);
+  }
+
+  @if $enable-dark-mode {
+    @include color-mode(dark) {
+      .calendar {
+        --#{$prefix}calendar-bg: #{$calendar-bg-dark};
+        --#{$prefix}calendar-border-color: #{$calendar-border-color-dark};
+        --#{$prefix}calendar-cap-bg: #{$calendar-cap-bg-dark};
+        --#{$prefix}calendar-day-sun-bg: #{$calendar-day-sun-bg-dark};
+        --#{$prefix}calendar-event-bg: #{$calendar-event-bg-dark};
+      }
+    }
+  }
